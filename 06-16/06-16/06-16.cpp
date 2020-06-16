@@ -42,6 +42,7 @@ float posX = 0;
 void InitMyStuff()
 {
     textureManager.LoadTexture(L"player1.png", PLAYER_PNG);
+    textureManager.LoadTexture(L"title.png", TITLE_PNG);
 }
 
 
@@ -79,8 +80,8 @@ void EngineRender()
 
 void EngineUpdate()
 {
-    if (inputManager.keyBuffer[VK_LEFT])
-        posX -= 1;
+    
+    inputManager.Update();
 }
 
 void GameLoop()
@@ -201,7 +202,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    /*pClassName, lpWindowName, dwStyle, x, y, \
        nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam*/
     hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, 640, 480, nullptr, nullptr, hInstance, nullptr);
+      CW_USEDEFAULT, 0, WINDOW_WIDTH, WINDOW_HEIGHT, nullptr, nullptr, hInstance, nullptr);
 
     
    if (!hWnd)
@@ -229,6 +230,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         break;
     case WM_KEYUP:
         inputManager.keyBuffer[wParam] = 0;
+        break;
+    case WM_LBUTTONDOWN:
+        inputManager.keyBuffer[VK_LBUTTON] = 1;
+        break;
+    case WM_LBUTTONUP:
+        inputManager.keyBuffer[VK_LBUTTON] = 0;
         break;
     default:
         return DefWindowProc(hWnd, message, wParam, lParam);
