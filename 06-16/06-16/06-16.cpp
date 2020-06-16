@@ -35,6 +35,8 @@ LPDIRECT3DDEVICE9   g_pd3dDevice = nullptr;
 //manager
 TextureManager textureManager;
 InputManager inputManager;
+StageManager stageManager;
+
 
 float posX = 0;
 
@@ -43,6 +45,9 @@ void InitMyStuff()
 {
     textureManager.LoadTexture(L"player1.png", PLAYER_PNG);
     textureManager.LoadTexture(L"title.png", TITLE_PNG);
+    textureManager.LoadTexture(L"background1.png", FiRSTSTAGE_PNG);
+
+    stageManager.MakeTitleStage();
 }
 
 
@@ -55,7 +60,7 @@ void EngineRender()
         D3DCOLOR_XRGB(0, 0, 255), 1.0f,0);
     if (SUCCEEDED(g_pd3dDevice->BeginScene()))
     {
-        TextureElement* element = textureManager.GetTexture(PLAYER_PNG);
+        /*TextureElement* element = textureManager.GetTexture(PLAYER_PNG);
 
         element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
 
@@ -71,7 +76,11 @@ void EngineRender()
 
         element->sprite->End();
 
+        g_pd3dDevice->EndScene();*/
+
+        stageManager.Render();
         g_pd3dDevice->EndScene();
+      
     }
 
     g_pd3dDevice->Present(NULL, NULL, NULL, NULL);
@@ -80,7 +89,7 @@ void EngineRender()
 
 void EngineUpdate()
 {
-    
+    stageManager.Update();
     inputManager.Update();
 }
 
