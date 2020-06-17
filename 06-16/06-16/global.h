@@ -3,11 +3,12 @@
 #include "TextureManager.h"
 #include "InputManager.h"
 #include "StageManager.h"
+#include "GameSystem.h"
 
 using namespace std;
 
-#define WINDOW_WIDTH 480
-#define WINDOW_HEIGHT 640
+#define WINDOW_WIDTH 640
+#define WINDOW_HEIGHT 480
 
 
 #define PLAYER_PNG 100
@@ -21,3 +22,4 @@ extern LPDIRECT3DDEVICE9   g_pd3dDevice ;
 extern TextureManager textureManager;
 extern InputManager inputManager;
 extern StageManager stageManager;
+extern GameSystem gameSystem;

@@ -13,8 +13,8 @@ void BackGround::Render(int name)
 	RECT srcRect;
 	srcRect.left = 0;
 	srcRect.top = 0;
-	srcRect.right = 480;
-	srcRect.bottom = 640;
+	srcRect.right = 640;
+	srcRect.bottom = 480;
 
 	D3DXVECTOR3 pos(0, posY, 0);
 	element->sprite->Draw(element->texture,&srcRect,nullptr,&pos,D3DCOLOR_XRGB(255,255,255));
@@ -27,7 +27,7 @@ void BackGround::Render(int name)
 
 void BackGround::Update()
 {
-	posY += 3;
+	posY += 1;
 	posY =(int) posY % WINDOW_HEIGHT;
 	
 }

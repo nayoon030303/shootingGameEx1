@@ -42,7 +42,7 @@ void Player::Update()
 		posY += speed;
 	if (inputManager.prevKeyBuffer['Z'] == 1 && inputManager.keyBuffer['Z'] == 0)
 	{
-		
+		gameSystem.MakePlayerBullet(posX, posY-30);
 	}
 
 }

@@ -2,13 +2,17 @@
 #include "global.h"
 #include "Player.h"
 
-PlayerBullet::PlayerBullet(float x, float y)
+PlayerBullet::PlayerBullet(float x, float y, float vx, float vy)
 {
 	width = 20;
 	height = 20;
 
-	posX = 0;
-	posY = 0;
+	posX = x;
+	posY = y;
+	velX = vx;
+	velY = vy;
+
+	isDead = false;
 
 }
 void PlayerBullet::Render()
@@ -22,7 +26,7 @@ void PlayerBullet::Render()
 	srcRect.right = 30;
 	srcRect.bottom = 20;
 
-	D3DXVECTOR3 pos(posX /*- width / 2*/, posY /*- height/2-30 / 2*/, 0);
+	D3DXVECTOR3 pos(posX, posY, 0);
 	element->sprite->Draw(element->texture, &srcRect, nullptr, &pos, D3DCOLOR_XRGB(255, 255, 255));
 
 	element->sprite->End();
@@ -30,7 +34,13 @@ void PlayerBullet::Render()
 
 void PlayerBullet::Update()
 {
-
+	posX += velX;
+	posY += velY;
+	if (posX<0 || posX>WINDOW_WIDTH || posY<0 || posY>WINDOW_HEIGHT)
+	{
+		isDead = true;
+	}
+		
 }
 
 D3DXVECTOR2 PlayerBullet::GetPos()
@@ -49,4 +59,9 @@ void PlayerBullet::GetWidth()
 void PlayerBullet::GetHeight()
 {
 
+}
+
+bool PlayerBullet::IsDead()
+{
+	return isDead;
 }

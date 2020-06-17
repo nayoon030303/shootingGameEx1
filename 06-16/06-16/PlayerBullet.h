@@ -8,7 +8,7 @@ public:
 
 	
 	
-	PlayerBullet(float x, float y);
+	PlayerBullet(float x, float y,float vx, float vy);
 	 void Render() override;
 	 void Update()override;
 
@@ -16,12 +16,18 @@ public:
 	 float GetRadious()override;
 	 void GetWidth()override;
 	 void GetHeight()override;
+	 bool IsDead() override;
 
 	 float posX;
 	 float posY;
 
 	 float width;
 	 float height;
+
+	 float velX;
+	 float velY;
+
+	 bool isDead;
 
 	 float speed;
 

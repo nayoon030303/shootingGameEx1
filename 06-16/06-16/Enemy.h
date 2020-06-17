@@ -10,4 +10,5 @@ public:
 	virtual void GetRadious() = 0;
 	virtual void GetWidth() = 0;
 	virtual void GetHeight() = 0;
+
 };

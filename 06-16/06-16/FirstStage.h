@@ -6,6 +6,7 @@
 class FirstStage:public Stage
 {
 public:
+	FirstStage();
 	void Render() override;
 	void Update() override;
 

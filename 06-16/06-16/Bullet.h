@@ -10,7 +10,7 @@ public:
 	virtual float GetRadious() = 0;
 	virtual void GetWidth() = 0;
 	virtual void GetHeight() = 0;
-
+	virtual bool IsDead() = 0;
 
 
 };

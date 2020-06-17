@@ -14,6 +14,7 @@ public:
 	void GetRadious()override;
 	void GetWidth()override;
 	void GetHeight()override;
+	
 
 	int hp;
 	float speed;
@@ -22,6 +23,7 @@ public:
 	float width;
 	float heigth;
 
+	
 	
 	
 };

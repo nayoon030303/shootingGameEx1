@@ -1,18 +1,21 @@
 #pragma once
 #include <vector>
-#include "PlayerBullet.h"
 
 using namespace std;
+
+class Bullet;
 
 class GameSystem
 {
 public:
+
+	vector<Bullet*> playerBullet;
 
 	GameSystem();
 	void MakePlayerBullet(float px, float py);
 	void Render();
 	void Update();
 
-	vector<Bullet*> playerBullet;
+	
 };
 
