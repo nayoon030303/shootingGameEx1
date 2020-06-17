@@ -1,17 +1,19 @@
 #pragma once
 #include "global.h"
+#include "PlayerBullet.h"
+#include "Enemy.h"
 
-class Player
+class Player:public Enemy
 {
 public:
 	Player();
-	void Render();
-	void Update();
+	void Render() override;
+	void Update()override;
 
-	D3DXVECTOR2 GetPos();
-	void GetRadious();
-	void GetWidth();
-	void GetHeight();
+	D3DXVECTOR2 GetPos()override;
+	void GetRadious()override;
+	void GetWidth()override;
+	void GetHeight()override;
 
 	int hp;
 	float speed;
@@ -19,4 +21,7 @@ public:
 	float posY;
 	float width;
 	float heigth;
+
+	
+	
 };

@@ -46,6 +46,7 @@ void InitMyStuff()
     textureManager.LoadTexture(L"Player.png", PLAYER_PNG);
     textureManager.LoadTexture(L"title.png", TITLE_PNG);
     textureManager.LoadTexture(L"background1.png", FiRSTSTAGE_PNG);
+    textureManager.LoadTexture(L"PlayerBulletSpread.png", PLAYER_BULLETSPREAD_PNG);
 
     stageManager.MakeTitleStage();
 }

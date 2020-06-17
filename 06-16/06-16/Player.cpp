@@ -1,9 +1,10 @@
 #include "Player.h"
 #include "global.h"
+#include "PlayerBullet.h"
 
 Player::Player()
 {
-	speed = 13;
+	speed = 1;
 	hp = 3.0f;
 	posX = WINDOW_WIDTH / 2;
 	posY = WINDOW_HEIGHT * 0.8;
@@ -33,7 +34,17 @@ void Player::Update()
 {
 	if (inputManager.keyBuffer[VK_LEFT] == 1)
 		posX -= speed;
+	if (inputManager.keyBuffer[VK_RIGHT] == 1)
+		posX += speed;
+	if (inputManager.keyBuffer[VK_UP] == 1)
+		posY -= speed;
+	if (inputManager.keyBuffer[VK_DOWN] == 1)
+		posY += speed;
+	if (inputManager.prevKeyBuffer['Z'] == 1 && inputManager.keyBuffer['Z'] == 0)
+	{
 		
+	}
+
 }
 
 D3DXVECTOR2 Player::GetPos()

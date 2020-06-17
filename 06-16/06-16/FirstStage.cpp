@@ -13,4 +13,5 @@ void FirstStage::Update()
 {
 	backGround.Update();
 	player.Update();
+	
 }
