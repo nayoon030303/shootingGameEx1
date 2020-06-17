@@ -1,7 +1,7 @@
 #pragma once
 #include "TitleStage.h"
 #include "Stage.h"
-
+#include "Player.h"
 class TitleStage : public Stage
 {
 public:
@@ -9,5 +9,4 @@ public:
 	 void Render() override;
 	 void Update() override;
 
-	
 };

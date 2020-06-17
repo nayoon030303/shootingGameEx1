@@ -43,7 +43,7 @@ float posX = 0;
 
 void InitMyStuff()
 {
-    textureManager.LoadTexture(L"player1.png", PLAYER_PNG);
+    textureManager.LoadTexture(L"Player.png", PLAYER_PNG);
     textureManager.LoadTexture(L"title.png", TITLE_PNG);
     textureManager.LoadTexture(L"background1.png", FiRSTSTAGE_PNG);
 

@@ -1,5 +1,6 @@
 #include "TitleStage.h"
 #include "global.h"
+#include "Player.h"
 
 TitleStage::TitleStage()
 {
@@ -31,5 +32,7 @@ void TitleStage::Update()
 		&& inputManager.keyBuffer[VK_LBUTTON] == 0)
 	{
 		stageManager.MakeGameStage();
+		
 	}
+
 }
